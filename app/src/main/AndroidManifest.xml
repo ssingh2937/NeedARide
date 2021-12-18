@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.app.ride">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <application
+        android:name=".authentication.utility.Globals"
+        android:allowBackup="true"
+        android:icon="@drawable/app_icon"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@drawable/app_icon"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SplashActivity">
+        <activity
+            android:name=".authentication.activity.RideListActivity"
+            android:exported="true" />
+        <activity
+            android:name=".authentication.activity.RatingActivity"
+            android:exported="true" />
+        <activity
+            android:name=".authentication.activity.GetStartedActivity"
+            android:exported="true" />
+        <activity
+            android:name=".authentication.activity.DriverDocumentActivity"
+            android:exported="true" />
+        <activity
+            android:name=".authentication.activity.ProfileDetailsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".authentication.activity.UploadDriverDocActivity"
+            android:exported="true">
+
+            <!--
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            -->
+        </activity>
+        <activity
+            android:name=".authentication.activity.PassengerActivity"
+            android:exported="true" />
+        <activity
+            android:name=".authentication.activity.DriverRideActivity"
+            android:exported="true" />
+        <activity
+            android:name=".authentication.activity.DashboardActivity"
+            android:exported="true" />
+        <activity
+            android:name=".authentication.activity.ProfileActivity"
+            android:exported="true" />
+        <activity
+            android:name=".authentication.activity.VerifyPhoneActivity"
+            android:exported="true" />
+        <activity
+            android:name=".authentication.activity.SignUpActivity"
+            android:exported="true" />
+        <activity
+            android:name=".authentication.activity.MessageActivity"
+            android:exported="true" />
+        <activity
+            android:name=".authentication.activity.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".authentication.activity.MessageListActivity"
+            android:exported="true" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+        <meta-data
+            android:name="com.google.mlkit.vision.DEPENDENCIES"
+            android:value="ocr" />
+
+        <service
+            android:name=".authentication.service.MyFirebaseMessagingService"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="com.paypal.android.sdk.payments.PayPalService"
+            android:exported="false" />
+
+        <activity android:name="com.paypal.android.sdk.payments.LoginActivity" />
+        <activity android:name="com.paypal.android.sdk.payments.PaymentMethodActivity" />
+        <activity android:name="com.paypal.android.sdk.payments.PaymentConfirmActivity" /> <!-- Add your API key here -->
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="rzp_test_FoZg0lpxBLKRgF" />
+        <meta-data
+            android:name="com.google.android.gms.wallet.api.enabled"
+            android:value="true" />
+    </application>
+
+</manifest>
